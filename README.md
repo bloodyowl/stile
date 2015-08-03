@@ -1,5 +1,7 @@
 # stile
 
+[![Build Status](https://travis-ci.org/bloodyowl/stile.svg?branch=master)](https://travis-ci.org/bloodyowl/stile)
+
 > a simple tool to help you using inline-styles with react
 
 ## install
