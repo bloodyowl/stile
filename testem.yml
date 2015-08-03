@@ -1,0 +1,7 @@
+framework: tap
+
+src_files: src/**/*
+serve_files: dist/test.js
+
+launch_in_ci:
+  - chrome
