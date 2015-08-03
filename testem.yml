@@ -4,7 +4,4 @@ src_files: modules/**/*
 serve_files: dist/test.js
 
 launch_in_ci:
-  - safari
-  - chrome
-  - internet explorer
-  - phantomjs
+  - firefox
