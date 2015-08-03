@@ -12,7 +12,13 @@ const config = {
       "./modules/index",
     ],
     test: [
-      "./webpack.test.js",
+      "./webpack.test",
+    ],
+    example01: [
+      "./examples/01",
+    ],
+    example02: [
+      "./examples/02",
     ],
   },
 
@@ -44,6 +50,12 @@ const config = {
           "babel?stage=0",
         ],
         exclude : /node_modules/,
+      },
+      {
+        test : /\.html$/,
+        loaders : [
+          "file?name=[path][name].[ext]&context=./examples",
+        ],
       },
     ],
   },
