@@ -103,7 +103,7 @@ class MyComponent {
 }
 ```
 
-### <ResizeProvider getViewport={func} initialViewport={object}/>
+### ResizeProvider
 
 A component to put at the top of your app, basically managing the resizeable
 components. The `getViewport` prop lets you return what these components will
@@ -112,7 +112,9 @@ the first time if defined in order to be able to render on the server.
 
 ```javascript
 React.render(
-  <ResizeProvider getViewport={({ width, height}) => width > 100 ? "M" : "S"}>
+  <ResizeProvider
+    initialViewport={{width: 100, height: 200}}
+    getViewport={({ width, height }) => width > 100 ? "M" : "S"}>
     {/* NOTE: you pass a function as callback */}
     {() => <App />}
   </ResizeProvider>,
