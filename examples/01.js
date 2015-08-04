@@ -1,3 +1,10 @@
+import "babel/polyfill"
+import assign from "object-assign"
+
+if(typeof Object.assign !== "function") {
+  Object.assign = assign
+}
+
 import React, {Component} from "react"
 import { createStyleSheet, rem, vh } from "../modules"
 

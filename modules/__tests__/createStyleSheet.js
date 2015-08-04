@@ -1,4 +1,4 @@
-import tape from "tape"
+import tape from "tape-catch"
 import createStyleSheet from "../createStyleSheet"
 
 tape("createStyleSheet", (test) => {

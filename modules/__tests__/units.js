@@ -1,4 +1,4 @@
-import tape from "tape"
+import tape from "tape-catch"
 import {em, rem, percent, deg, vw, vh} from "../units"
 
 tape("em", (test) => test.equal(em(1.3), "1.3em"))

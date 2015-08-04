@@ -1,4 +1,4 @@
-import tape from "tape"
+import tape from "tape-catch"
 import React, {Component, addons} from "react/addons"
 import resizeable from "../resizeable"
 import ResizeProvider from "../ResizeProvider"
