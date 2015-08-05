@@ -2,7 +2,7 @@
   "name": "stile",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "clean": "babel-node --stage 0 ./scripts/clean",
     "prestart": "npm run clean",
