@@ -13,6 +13,11 @@
     "bump": "npm start && npm publish"
   },
   "author": "bloodyowl",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist/index.js"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "react": "*"
