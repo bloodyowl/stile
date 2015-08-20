@@ -6,8 +6,7 @@ if(typeof Object.assign !== "function") {
 }
 
 import React, {Component} from "react"
-import { createStyleSheet, rem, vh } from "../modules"
-import { ResizeProvider, resizeable } from "../modules/react"
+import { createStyleSheet, rem, vh, ResizeProvider, resizeable } from "../modules"
 
 import "./02.html"
 

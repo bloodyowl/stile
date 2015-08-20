@@ -21,12 +21,9 @@ import {
   deg,
   vw,
   vh,
-} from "stile"
-
-import {
   resizeable,
   ResizeProvider,
-} from "stile/react"
+} from "stile"
 ```
 
 ## api
