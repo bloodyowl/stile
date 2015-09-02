@@ -21,3 +21,11 @@ export function vw(value) {
 export function vh(value) {
   return `${ value }vh`
 }
+
+export function join(...values) {
+  return values.join(" ")
+}
+
+export function list(...values) {
+  return values.join(", ")
+}

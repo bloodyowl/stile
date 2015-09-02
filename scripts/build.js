@@ -1,24 +1,36 @@
 import webpack from "webpack"
 import config from "../webpack.config"
 
-const __PROD__ = process.argv.includes("--production")
+import Test from "./Test"
+
+const test = process.argv.includes("--test")
 
 webpack({
   ...config,
-  plugins: [
-    ...config.plugins,
-    ...__PROD__ && [
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-        },
-      }),
+  ...test && {
+    plugins: [
+      ...config.plugins,
+      test && new Test(),
     ],
-  ],
-}, function(err, stats) {
+  },
+  ...!test && {
+    externals : [
+      {
+        "react" : {
+          root : "React",
+          commonjs2 : "react",
+          commonjs : "react",
+          amd : "react",
+        },
+      },
+    ],
+  },
+}, (err, stats) => {
   if(err) {
     throw err
   }
-  console.log("[lib] built!")
-  console.log(stats.toString())
+
+  if(!test) {
+    console.log(stats.toString())
+  }
 })

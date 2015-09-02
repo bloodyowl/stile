@@ -1,6 +1,6 @@
 {
   "name": "stile",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -8,8 +8,7 @@
     "prestart": "npm run clean",
     "start": "babel-node --stage 0 ./scripts/build",
     "examples": "babel-node --stage 0 ./scripts/examples",
-    "pretest": "npm run clean && npm start",
-    "test": "testem ci",
+    "test": "babel-node --stage 0 ./scripts/build --test",
     "bump": "npm start && npm publish"
   },
   "author": "bloodyowl",
@@ -31,7 +30,7 @@
     "react": "^0.13.3",
     "rimraf": "^2.4.2",
     "tape-catch": "^1.0.4",
-    "testem": "^0.9.1",
+    "jsdom": "^6.1.0",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1"
   }

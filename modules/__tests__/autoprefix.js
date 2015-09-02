@@ -23,4 +23,5 @@ tape("autoprefix", (test) => {
       display: "flex;display:-webkit-flex;display:-ms-flexbox"
     }
   )
+  test.end()
 })

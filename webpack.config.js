@@ -14,12 +14,6 @@ const config = {
     test: [
       "./webpack.test",
     ],
-    example01: [
-      "./examples/01",
-    ],
-    example02: [
-      "./examples/02",
-    ],
   },
 
   output : {
