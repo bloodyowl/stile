@@ -8,7 +8,7 @@ tape("createStyleSheet", (test) => {
       bar: { color: "red"}
     }),
     {
-      foo: { transform: "rotate(180deg)", WebkitTransform: "rotate(180deg)" },
+      foo: { transform: "rotate(180deg)" },
       bar: { color: "red"}
     }
   )
@@ -28,4 +28,5 @@ tape("createStyleSheet", (test) => {
       }).foo
     )
   )
+  test.end()
 })
