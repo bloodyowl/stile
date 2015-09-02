@@ -21,6 +21,8 @@ import {
   deg,
   vw,
   vh,
+  join,
+  list,
   resizeable,
   ResizeProvider,
 } from "stile"
@@ -86,6 +88,22 @@ Adds the `vh` unit to your value
 
 ```javascript
 vh(1.5) // "1.5vh"
+```
+
+### string join(...values)
+
+Joins values with a space
+
+```javascript
+join(0, 0, rem(1)) // "0 0 1rem"
+```
+
+### string list(...values)
+
+Joins values with a comma
+
+```javascript
+join("300ms linear color", "200ms linear height") // "300ms linear color, 200ms linear height"
 ```
 
 ### @resizeable() class
