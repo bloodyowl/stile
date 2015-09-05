@@ -20,7 +20,16 @@ tape("autoprefix", (test) => {
       display: "flex",
     }),
     {
-      display: "flex;display:-webkit-flex;display:-ms-flexbox"
+      display: "flex;display:-webkit-flex;display:-ms-flexbox",
+    }
+  )
+  test.deepEqual(
+    autoprefix({
+      flexFlow: "row",
+    }),
+    {
+      flexFlow: "row",
+      WebkitFlexFlow: "row",
     }
   )
   test.end()
