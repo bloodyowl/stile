@@ -103,7 +103,7 @@ join(0, 0, rem(1)) // "0 0 1rem"
 Joins values with a comma
 
 ```javascript
-join("300ms linear color", "200ms linear height") // "300ms linear color, 200ms linear height"
+list("300ms linear color", "200ms linear height") // "300ms linear color, 200ms linear height"
 ```
 
 ### @resizeable() class
