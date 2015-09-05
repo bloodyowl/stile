@@ -4,8 +4,6 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "clean": "babel-node --stage 0 ./scripts/clean",
-    "prestart": "npm run clean",
     "start": "babel-node --stage 0 ./scripts/build",
     "examples": "babel-node --stage 0 ./scripts/examples",
     "test": "babel-node --stage 0 ./scripts/build --test",
