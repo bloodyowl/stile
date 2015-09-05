@@ -46,6 +46,12 @@ export default function autoprefix(style) {
       WebkitFlexDirection: style.flexDirection,
     })
   }
+  
+  if (style.hasOwnProperty("flexFlow")) {
+    Object.assign(style, {
+      WebkitFlexFlow: style.flexFlow,
+    })
+  }
 
   if (style.hasOwnProperty("flexWrap")) {
     Object.assign(style, {
