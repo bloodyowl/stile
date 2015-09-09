@@ -18,6 +18,14 @@ export default function autoprefix(style) {
       msTransition: style.transition,
     })
   }
+  
+  if (style.hasOwnProperty("transform")) {
+    Object.assign(style, {
+      WebkitTransform: style.transform,
+      MozTransform: style.transform,
+      msTransform: style.transform,
+    })
+  }
 
   if (style.hasOwnProperty("boxShadow")) {
     Object.assign(style, {
