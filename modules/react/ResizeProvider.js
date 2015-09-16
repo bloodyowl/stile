@@ -1,4 +1,17 @@
-import React, {Component, PropTypes} from "react"
+import React, { Component, PropTypes } from "react"
+
+function isUsingOwnerContext() {
+  const { version } = React
+  if (typeof version !== "string") {
+    return true
+  }
+
+  const sections = version.split(".")
+  const major = parseInt(sections[0], 10)
+  const minor = parseInt(sections[1], 10)
+
+  return major === 0 && minor === 13
+}
 
 const noop = () => {}
 
@@ -64,9 +77,10 @@ class ResizeProvider extends Component {
   }
 
   render() {
-    return (
-      this.props.children()
-    )
+    if(isUsingOwnerContext()) {
+      return this.props.children()
+    }
+    return Children.only(this.props.children)
   }
 }
 
