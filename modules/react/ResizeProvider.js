@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react"
+import React, { Component, PropTypes, Children } from "react"
 
 function isUsingOwnerContext() {
   const { version } = React
