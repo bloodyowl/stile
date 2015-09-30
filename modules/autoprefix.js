@@ -18,7 +18,7 @@ export default function autoprefix(style) {
       msTransition: style.transition,
     })
   }
-  
+
   if (style.hasOwnProperty("transform")) {
     Object.assign(style, {
       WebkitTransform: style.transform,
@@ -54,7 +54,7 @@ export default function autoprefix(style) {
       WebkitFlexDirection: style.flexDirection,
     })
   }
-  
+
   if (style.hasOwnProperty("flexFlow")) {
     Object.assign(style, {
       WebkitFlexFlow: style.flexFlow,
@@ -99,6 +99,11 @@ export default function autoprefix(style) {
 
   if (style.display === "flex") {
     style.display = style.display + ";display:-webkit-flex;display:-ms-flexbox"
+  }
+
+  if (style.display === "inline-flex") {
+    style.display =
+      style.display + ";display:-webkit-inline-flex;display:-ms-inline-flexbox"
   }
 
   return style
