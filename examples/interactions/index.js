@@ -8,7 +8,7 @@ import Button from "./Button"
 
 const App = () => (
   <div style={styles.container}>
-    <Button>I'm a button</Button>
+    <Button>{`I'm a button`}</Button>
   </div>
 )
 
