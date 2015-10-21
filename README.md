@@ -23,8 +23,6 @@ import {
   vh,
   join,
   list,
-  resizeable,
-  ResizeProvider,
 } from "stile"
 ```
 
@@ -104,37 +102,4 @@ Joins values with a comma
 
 ```javascript
 list("300ms linear color", "200ms linear height") // "300ms linear color, 200ms linear height"
-```
-
-### @resizeable() class
-
-Creates a higher-order component giving to your component some props about
-the viewport. Also makes your component update whenever the window is resized.
-
-> Requires ResizeProvider
-
-```javascript
-@resizeable()
-class MyComponent {
-  const { viewport, viewportWidth, viewportHeight } = this.props
-}
-```
-
-### ResizeProvider
-
-A component to put at the top of your app, basically managing the resizeable
-components. The `getViewport` prop lets you return what these components will
-receive as `viewport` prop. The `initialViewport` is passed to `getViewport`
-the first time if defined in order to be able to render on the server.
-
-```javascript
-React.render(
-  <ResizeProvider
-    initialViewport={{width: 100, height: 200}}
-    getViewport={({ width, height }) => width > 100 ? "M" : "S"}>
-    {/* NOTE: you pass a function as callback */}
-    {() => <App />}
-  </ResizeProvider>,
-  mountNode
-)
 ```

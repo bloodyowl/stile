@@ -1,4 +1,3 @@
-import tape from "tape-catch"
 import autoprefix from "../autoprefix"
 
 tape("autoprefix", (test) => {

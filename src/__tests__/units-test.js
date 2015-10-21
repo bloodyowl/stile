@@ -1,4 +1,3 @@
-import tape from "tape-catch"
 import {em, rem, percent, deg, vw, vh, join, list} from "../units"
 
 tape("em", (test) => {

@@ -1,4 +1,3 @@
-import tape from "tape-catch"
 import createStyleSheet from "../createStyleSheet"
 
 tape("createStyleSheet", (test) => {
@@ -8,7 +7,12 @@ tape("createStyleSheet", (test) => {
       bar: { color: "red"}
     }),
     {
-      foo: { transform: "rotate(180deg)" },
+      foo: {
+        transform: "rotate(180deg)",
+        MozTransform: "rotate(180deg)",
+        WebkitTransform: "rotate(180deg)",
+        msTransform: "rotate(180deg)",
+      },
       bar: { color: "red"}
     }
   )

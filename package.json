@@ -1,35 +1,31 @@
 {
   "name": "stile",
-  "version": "0.2.6",
-  "description": "",
-  "main": "./dist/index.js",
+  "version": "1.0.0",
+  "description": "stylesheet creator for js inline-styles",
+  "main": "./lib/index.js",
   "scripts": {
-    "start": "babel-node --stage 0 ./scripts/build",
-    "examples": "babel-node --stage 0 ./scripts/examples",
-    "test": "babel-node --stage 0 ./scripts/build --test",
-    "bump": "npm start && npm publish"
+    "start": "babel --stage 0 src --out-dir lib --ignore '__tests__'",
+    "examples": "babel-node --stage 0 ./scripts/webpack/examples",
+    "test": "babel-node --stage 0 ./scripts/webpack/test"
   },
   "author": "bloodyowl",
   "files": [
     "README.md",
     "LICENSE",
-    "dist/index.js"
+    "lib"
   ],
   "license": "MIT",
-  "peerDependencies": {
-    "react": "*"
-  },
   "devDependencies": {
     "babel": "^5.8.20",
     "babel-core": "^5.8.20",
     "babel-loader": "^5.3.2",
-    "object-assign": "^3.0.0",
-    "opn": "^3.0.2",
-    "react": "^0.13.3",
-    "rimraf": "^2.4.2",
-    "tape-catch": "^1.0.4",
+    "file-loader": "^0.8.4",
     "jsdom": "^6.1.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "tape-catch": "^1.0.4",
     "webpack": "^1.10.5",
-    "webpack-dev-server": "^1.10.1"
+    "webpack-dev-server": "^1.10.1",
+    "webpack-jsdom-tape-plugin": "^1.2.0"
   }
 }
