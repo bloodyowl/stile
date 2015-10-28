@@ -3,6 +3,27 @@ export default function autoprefix(style) {
 
   style = {...style}
 
+  const alignItemsOldValues = {
+    "flex-start": "start",
+    "flex-end": "end",
+    "center": "center",
+    "baseline": "baseline",
+    "stretch": "stretch",
+  }
+
+  const justifyContentOldValues = {
+    "flex-start": "start",
+    "flex-end": "end",
+    "space-between": "justify",
+    "space-around": "distribute",
+  }
+
+  const flexWrapOldValues = {
+    "nowrap": "none",
+    "wrap": "wrap",
+    "wrap-reverse": "wrap-reverse",
+  }
+
   if (style.hasOwnProperty("userSelect")) {
     Object.assign(style, {
       WebkitUserSelect: style.userSelect,
@@ -46,54 +67,63 @@ export default function autoprefix(style) {
   if (style.hasOwnProperty("flex")) {
     Object.assign(style, {
       WebkitFlex: style.flex,
+      msFlex: style.flex,
     })
   }
 
   if (style.hasOwnProperty("flexDirection")) {
     Object.assign(style, {
       WebkitFlexDirection: style.flexDirection,
+      msFlexDirection: style.flexDirection,
     })
   }
 
   if (style.hasOwnProperty("flexFlow")) {
     Object.assign(style, {
       WebkitFlexFlow: style.flexFlow,
+      msFlexFlow: style.flexFlow,
     })
   }
 
   if (style.hasOwnProperty("flexWrap")) {
     Object.assign(style, {
       WebkitFlexWrap: style.flexWrap,
+      msFlexWrap: style.flexWrap,
     })
   }
 
   if (style.hasOwnProperty("alignItems")) {
     Object.assign(style, {
       WebkitAlignItems: style.alignItems,
+      msFlexAlignItems: alignItemsOldValues[style.alignItems],
     })
   }
 
   if (style.hasOwnProperty("flexGrow")) {
     Object.assign(style, {
       WebkitFlexGrow: style.flexGrow,
+      msFlexPositive: style.flexGrow,
     })
   }
 
   if (style.hasOwnProperty("flexShrink")) {
     Object.assign(style, {
       WebkitFlexShrink: style.flexShrink,
+      msFlexNegative: style.flexShrink,
     })
   }
 
   if (style.hasOwnProperty("order")) {
     Object.assign(style, {
       WebkitOrder: style.order,
+      msFlexOrder: style.order,
     })
   }
 
   if (style.hasOwnProperty("justifyContent")) {
     Object.assign(style, {
       WebkitJustifyContent: style.justifyContent,
+      msFlexPack: justifyContentOldValues[style.justifyContent]
     })
   }
 
