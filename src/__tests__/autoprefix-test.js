@@ -29,6 +29,27 @@ tape("autoprefix", (test) => {
     {
       flexFlow: "row",
       WebkitFlexFlow: "row",
+      msFlexFlow: "row",
+    }
+  )
+  test.deepEqual(
+    autoprefix({
+      justifyContent: "flex-start",
+    }),
+    {
+      justifyContent: "flex-start",
+      WebkitJustifyContent: "flex-start",
+      msFlexPack: "start",
+    }
+  )
+  test.deepEqual(
+    autoprefix({
+      alignItems: "flex-end",
+    }),
+    {
+      alignItems: "flex-end",
+      WebkitAlignItems: "flex-end",
+      msFlexAlignItems: "end",
     }
   )
   test.end()
