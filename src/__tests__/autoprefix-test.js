@@ -19,7 +19,7 @@ tape("autoprefix", (test) => {
       display: "flex",
     }),
     {
-      display: "flex;display:-webkit-flex;display:-ms-flexbox",
+      display: "flex",
     }
   )
   test.deepEqual(

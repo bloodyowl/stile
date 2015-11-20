@@ -1,3 +1,15 @@
+import getSupportedCSSValue from "./getSupportedCSSValue"
+
+const FLEX_VALUE = getSupportedCSSValue(
+  "display",
+  ["flex", "-webkit-flex", "-ms-flexbox"]
+)
+
+const INLINE_FLEX_VALUE = getSupportedCSSValue(
+  "display",
+  ["inline-flex", "-webkit-inline-flex", "-ms-inline-flexbox"]
+)
+
 // from https://github.com/petehunt/jsxstyle/blob/master/lib/autoprefix.js
 export default function autoprefix(style) {
 
@@ -98,12 +110,11 @@ export default function autoprefix(style) {
   }
 
   if (style.display === "flex") {
-    style.display = style.display + ";display:-webkit-flex;display:-ms-flexbox"
+    style.display = FLEX_VALUE
   }
 
   if (style.display === "inline-flex") {
-    style.display =
-      style.display + ";display:-webkit-inline-flex;display:-ms-inline-flexbox"
+    style.display = INLINE_FLEX_VALUE
   }
 
   return style
