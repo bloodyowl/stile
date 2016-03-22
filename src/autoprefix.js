@@ -58,12 +58,14 @@ export default function autoprefix(style) {
   if (style.hasOwnProperty("flex")) {
     Object.assign(style, {
       WebkitFlex: style.flex,
+      msFlex: style.flex,
     })
   }
 
   if (style.hasOwnProperty("flexDirection")) {
     Object.assign(style, {
       WebkitFlexDirection: style.flexDirection,
+      msFlexDirection: style.flexDirection,
     })
   }
 
@@ -76,24 +78,36 @@ export default function autoprefix(style) {
   if (style.hasOwnProperty("flexWrap")) {
     Object.assign(style, {
       WebkitFlexWrap: style.flexWrap,
+      msFlexWrap: style.flexWrap,
     })
+  }
+
+  const alignItemsOldValues = {
+    "flex-start": "start",
+    "flex-end": "end",
+    "center": "center",
+    "baseline": "baseline",
+    "stretch": "stretch",
   }
 
   if (style.hasOwnProperty("alignItems")) {
     Object.assign(style, {
       WebkitAlignItems: style.alignItems,
+      msFlexAlign: alignItemsOldValues[style.alignItems],
     })
   }
 
   if (style.hasOwnProperty("flexGrow")) {
     Object.assign(style, {
       WebkitFlexGrow: style.flexGrow,
+      msFlexPositive: style.flexGrow,
     })
   }
 
   if (style.hasOwnProperty("flexShrink")) {
     Object.assign(style, {
       WebkitFlexShrink: style.flexShrink,
+      msFlexNegative: style.flexGrow,
     })
   }
 
@@ -103,9 +117,18 @@ export default function autoprefix(style) {
     })
   }
 
+  var justifyContentOldValues = {
+    "flex-start": "start",
+    "flex-end": "end",
+    "space-between": "justify",
+    "space-around": "distribute",
+    "center": "center",
+  }
+
   if (style.hasOwnProperty("justifyContent")) {
     Object.assign(style, {
       WebkitJustifyContent: style.justifyContent,
+      msFlexPack: justifyContentOldValues[style.justifyContent],
     })
   }
 
