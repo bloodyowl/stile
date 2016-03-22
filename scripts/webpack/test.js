@@ -7,7 +7,7 @@ import JsdomTapePlugin from "webpack-jsdom-tape-plugin"
 const location = {
   protocol: "http://",
   host: "0.0.0.0",
-  port: 3001,
+  port: 3002,
   open: true,
 }
 
