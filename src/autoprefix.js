@@ -62,6 +62,12 @@ export default function autoprefix(style) {
     })
   }
 
+  if (style.hasOwnProperty("flexBasis")) {
+    Object.assign(style, {
+      WebkitFlexBasis: style.flexBasis,
+    })
+  }
+
   if (style.hasOwnProperty("flexDirection")) {
     Object.assign(style, {
       WebkitFlexDirection: style.flexDirection,
